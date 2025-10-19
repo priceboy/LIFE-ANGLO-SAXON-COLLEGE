@@ -115,6 +115,27 @@
 
     /* Accessibility focus */
     a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(11,59,111,0.14);outline-offset:2px}
+    body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* This prevents your content from touching the edges */
+.container, .image-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Makes image responsive and centered */
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* optional, makes it look nicer */
+  display: block;
+}
+
   </style>
 </head>
 <body>
@@ -327,7 +348,10 @@
           <img src="https://i.postimg.cc/wx5Qwq98/Screenshot-20251017-210014.jpg" alt="Principal portrait" style="width:64px;height:64px;border-radius:999px;object-fit:cover;" />
           <img src="https://i.postimg.cc/wx5Qwq98/Screenshot-20251017-210014.jpg"/>
       </div>  
-           <img src="https://i.postimg.cc/wx5Qwq98/Screenshot-20251017-210014.jpg"/>
+        <div class="image-container">
+  <img src="https://i.postimg.cc/wx5Qwq98/Screenshot-20251017-210014.jpg" alt="Website Image">
+</div>
+
     <section id="news">
       <div class="container">
         <h3>News & Events</h3>
