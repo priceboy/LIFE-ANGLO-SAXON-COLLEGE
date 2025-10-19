@@ -95,6 +95,35 @@
     }
 
     a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(11,59,111,0.14);outline-offset:2px;}
+    .section-background {
+  position: relative;
+  background-size: cover;      /* image fills the section */
+  background-position: center; /* centers the image */
+  background-repeat: no-repeat;
+  color: white;                /* ensures text stands out */
+  padding: 80px 0;
+  border-radius: 12px;
+}
+
+/* Optional overlay to improve readability */
+.section-background::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay */
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.section-background > * {
+  position: relative;
+  z-index: 2; /* ensures content sits above overlay */
+}
+.hero {
+  padding-top: 300px; /* increase from 56px to push it down */
+}
+
+
   </style>
 </head>
 <body>
@@ -137,7 +166,7 @@
 
   <main id="main">
     <!-- Hero Section -->
-    <section class="hero container">
+    <section class="hero container"style="background-image:url('https://i.postimg.cc/VkgBBmQT/IMG-20251019-WA0016.jpg');background-size:cover;background-position:center;border-radius:12px;color:white;position:relative;overflow:hidden;">
       <div>
         <h2>Where resilience becomes leadership</h2>
         <p class="lead">At LIFE ANGLO SAXON COLLEGE we cultivate purpose, grit, and service — preparing students to lead with empathy and strength.</p>
