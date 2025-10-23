@@ -53,6 +53,8 @@
         <a href="#about" class="hover:text-lasco-navy-2">About</a>
         <a href="#academics" class="hover:text-lasco-navy-2">Academics</a>
         <a href="#admissions" class="hover:text-lasco-navy-2">Admissions</a>
+        <a href="#laboratory" class="hover:text-lasco-navy-2">Laboratory</a>
+        <a href="#location" class="hover:text-lasco-navy-2">Location</a>
         <a href="#gallery" class="hover:text-lasco-navy-2">Gallery</a>
         <a href="#contact" class="px-3 py-1 rounded-md bg-lasco-navy text-white text-sm ml-2">Contact</a>
       </nav>
@@ -81,7 +83,7 @@
   <main id="main" class="max-w-4xl mx-auto">
 
     <!-- HERO: mobile-first, tall but not too tall -->
-    <section id="home" class="relative clip-hero h-[48vh] sm:h-[56vh] md:h-[68vh] rounded-b-2xl overflow-hidden" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=60');">
+    <section id="home" class="relative clip-hero h-[48vh] sm:h-[56vh] md:h-[68vh] rounded-b-2xl overflow-hidden" style="background-image:url('https://i.postimg.cc/cCg100rR/IMG-20251019-WA0016.jpg');">
       <div class="absolute inset-0 bg-gradient-to-b from-black/35 to-black/25"></div>
       <div class="relative px-4 h-full flex flex-col justify-center">
         <div class="max-w-2xl">
@@ -160,6 +162,38 @@
       </div>
     </section>
 
+    <!-- LABORATORY -->
+<section id="laboratory" class="px-4 py-8">
+  <div class="bg-white rounded-xl p-4 shadow-sm">
+    <h3 class="text-lg font-semibold text-lasco-navy">Our Laboratories</h3>
+    <p class="text-sm text-slate-600 mt-2">State-of-the-art labs that provide hands-on experience in sciences and technology.</p>
+
+    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-4 md:grid-cols-5 gap-3">
+      <div class="p-2 rounded-lg overflow-hidden border">
+        <img src="https://i.postimg.cc/zXDZCJJ6/IMG-20251019-WA0029.jpg" alt="Chemistry Lab" class="w-full h-36 object-cover rounded-md">
+        <h4 class="mt-2 font-semibold text-sm">Chemistry Lab</h4>
+      </div>
+      <div class="p-2 rounded-lg overflow-hidden border">
+        <img src="https://i.postimg.cc/qqxrkqpy/IMG-20251019-WA0027.jpg" alt="Biology Lab" class="w-full h-36 object-cover rounded-md">
+        <h4 class="mt-2 font-semibold text-sm">Biology Lab</h4>
+      </div>
+      <div class="p-2 rounded-lg overflow-hidden border">
+        <img src="https://i.postimg.cc/zGJw7Gv0/IMG-20251019-WA0033.jpg" alt="Physics Lab" class="w-full h-36 object-cover rounded-md">
+        <h4 class="mt-2 font-semibold text-sm">Physics Lab</h4>
+      </div>
+      <div class="p-2 rounded-lg overflow-hidden border">
+        <img src="https://i.postimg.cc/4xrSSZgN/IMG-20251019-WA0030.jpg" alt="Physics Lab" class="w-full h-36 object-cover rounded-md">
+        <h4 class="mt-2 font-semibold text-sm">Food Science</h4>
+      </div>
+      <div class="p-2 rounded-lg overflow-hidden border">
+        <img src="https://picsum.photos/seed/lab3/600/400" alt="Physics Lab" class="w-full h-36 object-cover rounded-md">
+        <h4 class="mt-2 font-semibold text-sm">Computer Science</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     <!-- ADMISSIONS -->
     <section id="admissions" class="px-4 py-8">
       <div class="bg-white rounded-xl p-4 shadow-sm">
@@ -185,6 +219,23 @@
       </div>
     </section>
 
+    <!-- LOCATION / CAMPUS -->
+<section id="location" class="px-4 py-8">
+  <div class="bg-white rounded-xl p-4 shadow-sm">
+    <h3 class="text-lg font-semibold text-lasco-navy">Our Campus & Location</h3>
+    <p class="text-sm text-slate-600 mt-2">Discover where our campus is located and explore the surroundings.</p>
+
+    <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
+      <img src="https://i.postimg.cc/wv6dTJjw/Screenshot-20251017-210014.jpg" alt="Campus Entrance" class="w-full h-36 object-cover rounded-md">
+      <img src="https://picsum.photos/seed/location2/600/400" alt="Sports Field" class="w-full h-36 object-cover rounded-md">
+      <img src="https://picsum.photos/seed/location3/600/400" alt="Library & Study Area" class="w-full h-36 object-cover rounded-md">
+      <img src="https://picsum.photos/seed/location4/600/400" alt="Campus Gardens" class="w-full h-36 object-cover rounded-md">
+      <img src="https://picsum.photos/seed/location5/600/400" alt="Auditorium" class="w-full h-36 object-cover rounded-md">
+      <img src="https://picsum.photos/seed/location6/600/400" alt="Nearby Landmark" class="w-full h-36 object-cover rounded-md">
+    </div>
+  </div>
+</section>
+
     <!-- GALLERY -->
     <section id="gallery" class="px-4 py-8">
       <div class="bg-white rounded-xl p-4 shadow-sm">
@@ -192,15 +243,16 @@
         <p class="text-sm text-slate-600 mt-2">Photos from campus life, events and accomplishments.</p>
 
         <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
-          <img src="https://picsum.photos/seed/1/600/400" alt="gallery 1" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
-          <img src="https://picsum.photos/seed/2/600/400" alt="gallery 2" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
-          <img src="https://picsum.photos/seed/3/600/400" alt="gallery 3" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
-          <img src="https://picsum.photos/seed/4/600/400" alt="gallery 4" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
-          <img src="https://picsum.photos/seed/5/600/400" alt="gallery 5" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
-          <img src="https://picsum.photos/seed/6/600/400" alt="gallery 6" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
+          <img src="https://i.postimg.cc/5NJ892BX/IMG-20251019-WA0018.jpg" alt="gallery 1" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
+          <img src="https://i.postimg.cc/Jz4JJYd0/IMG-20251019-WA0020.jpg" alt="gallery 2" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
+          <img src="https://i.postimg.cc/xjvbZVW4/IMG-20251019-WA0036.jpg" alt="gallery 3" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
+          <img src="https://i.postimg.cc/qR8gW2Zh/IMG-20251019-WA0024.jpg" alt="gallery 4" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
+          <img src="https://i.postimg.cc/L8n52cbM/IMG-20251019-WA0023.jpg" alt="gallery 5" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
+          <img src="https://i.postimg.cc/L5947wPh/IMG-20251019-WA0031.jpg" alt="gallery 6" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
         </div>
       </div>
     </section>
+    
 
     <!-- CONTACT -->
     <section id="contact" class="px-4 py-8">
