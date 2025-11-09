@@ -1,350 +1,1266 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LIFE ANGLO SAXON COLLEGE — Excellence With Integrity</title>
-  <meta name="description" content="LIFE ANGLO SAXON COLLEGE — developing confident leaders rooted in excellence and integrity." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LIFE ANGLO SAXON COLLEGE — Excellence With Integrity</title>
+    <meta name="description"
+        content="LIFE ANGLO SAXON COLLEGE — developing confident leaders rooted in excellence and integrity." />
 
-  <!-- Tailwind Play CDN - mobile-first friendly -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Configure custom colors & font via Tailwind CDN config
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'lasco-navy': '#042A4A',
-            'lasco-navy-2': '#0B3B6F',
-            'lasco-gold': '#F59E0B'
-          },
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto']
-          },
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'lasco-navy': '#1e3a8a',
+                        'lasco-navy-2': '#1e40af',
+                        'lasco-navy-light': '#3b82f6',
+                        'lasco-gold': '#f59e0b',
+                        'lasco-gold-light': '#fbbf24'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.7s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        bounceGentle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 
-  <style>
-    /* small helpers outside Tailwind for fine tuning */
-    .clip-hero { background-repeat: no-repeat; background-size: cover; background-position: center; }
-    /* visually-hidden for skip link */
-    .sr-only { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
-  </style>
+    <style>
+        .clip-hero {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .sr-only {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #f59e0b !important;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #1e3a8a !important;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .news-card {
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
 </head>
-<body class="antialiased text-slate-900 bg-white font-sans">
-  <a class="sr-only" href="#main">Skip to main content</a>
 
-  <!-- STICKY NAV - mobile first -->
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-sm border-b border-slate-200">
-    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-lg bg-lasco-navy flex items-center justify-center text-white font-bold">LAS</div>
-        <div>
-          <h1 class="text-sm font-semibold leading-tight">LIFE ANGLO SAXON COLLEGE</h1>
-          <p class="text-xs text-slate-500">Excellence With Integrity</p>
-        </div>
-      </div>
+<body class="antialiased text-slate-900 bg-gradient-to-br from-slate-50 to-blue-50 font-sans">
+    <a class="sr-only" href="#main">Skip to main content</a>
 
-      <!-- Desktop nav (hidden on mobile) -->
-      <nav class="hidden md:flex items-center gap-4 text-sm">
-        <a href="#home" class="hover:text-lasco-navy-2">Home</a>
-        <a href="#about" class="hover:text-lasco-navy-2">About</a>
-        <a href="#academics" class="hover:text-lasco-navy-2">Academics</a>
-        <a href="#admissions" class="hover:text-lasco-navy-2">Admissions</a>
-        <a href="#laboratory" class="hover:text-lasco-navy-2">Laboratory</a>
-        <a href="#location" class="hover:text-lasco-navy-2">Location</a>
-        <a href="#gallery" class="hover:text-lasco-navy-2">Gallery</a>
-        <a href="#contact" class="px-3 py-1 rounded-md bg-lasco-navy text-white text-sm ml-2">Contact</a>
-      </nav>
-
-      <!-- Mobile menu button -->
-      <div class="md:hidden">
-        <button id="mobileBtn" aria-expanded="false" aria-controls="mobileMenu" class="p-2 rounded-md border border-slate-200">
-          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile nav panel -->
-    <div id="mobileMenu" class="md:hidden border-t border-slate-100 bg-white/95 backdrop-blur-sm hidden">
-      <nav class="px-4 py-4 flex flex-col gap-2">
-        <a href="#home" class="py-2 px-2 rounded-md">Home</a>
-        <a href="#about" class="py-2 px-2 rounded-md">About</a>
-        <a href="#academics" class="py-2 px-2 rounded-md">Academics</a>
-        <a href="#admissions" class="py-2 px-2 rounded-md">Admissions</a>
-        <a href="#gallery" class="py-2 px-2 rounded-md">Gallery</a>
-        <a href="#contact" class="py-2 px-2 rounded-md bg-lasco-navy text-white rounded-md text-center">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="max-w-4xl mx-auto">
-
-    <!-- HERO: mobile-first, tall but not too tall -->
-    <section id="home" class="relative clip-hero h-[48vh] sm:h-[56vh] md:h-[68vh] rounded-b-2xl overflow-hidden" style="background-image:url('https://i.postimg.cc/cCg100rR/IMG-20251019-WA0016.jpg');">
-      <div class="absolute inset-0 bg-gradient-to-b from-black/35 to-black/25"></div>
-      <div class="relative px-4 h-full flex flex-col justify-center">
-        <div class="max-w-2xl">
-          <span class="inline-block bg-lasco-navy-2 text-white text-xs font-semibold px-3 py-1 rounded-full">LIFE ANGLO SAXON COLLEGE</span>
-          <h2 class="mt-4 text-white text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight">Where resilience becomes leadership</h2>
-          <p class="mt-3 text-white/90 text-sm sm:text-base">We cultivate grit, service and scholarship — preparing students to lead with empathy and strength.</p>
-
-          <div class="mt-4 flex gap-3">
-            <a href="#admissions" class="inline-flex items-center justify-center rounded-md bg-lasco-gold px-4 py-2 text-sm font-semibold shadow">Apply Now</a>
-            <a href="#about" class="inline-flex items-center justify-center rounded-md border border-white/30 px-4 py-2 text-sm text-white">Learn more</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- decorative card on larger screens -->
-      <aside class="hidden md:block absolute right-6 bottom-8 w-72 bg-white/95 rounded-xl p-4 shadow-lg">
-        <h3 class="text-sm font-semibold text-lasco-navy">Stories of Resilience</h3>
-        <p class="text-xs text-slate-600 mt-2">Hear from students and alumni about leadership, service, and impact.</p>
-      </aside>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="px-4 py-8">
-      <div class="bg-white rounded-xl p-4 shadow-sm">
-        <h3 class="text-lg font-semibold text-lasco-navy">Our Mission</h3>
-        <p class="mt-2 text-sm text-slate-600">To develop confident leaders rooted in service and scholarship. We focus on holistic development: academics, arts and athletics — guided by strong mentorship.</p>
-
-        <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div class="p-3 rounded-lg border">
-            <h4 class="font-semibold text-sm">Academic Rigor</h4>
-            <p class="text-xs text-slate-500 mt-1">Advanced courses, experienced faculty, strong outcomes.</p>
-          </div>
-          <div class="p-3 rounded-lg border">
-            <h4 class="font-semibold text-sm">Character & Service</h4>
-            <p class="text-xs text-slate-500 mt-1">Community projects and leadership labs.</p>
-          </div>
-          <div class="p-3 rounded-lg border">
-            <h4 class="font-semibold text-sm">Innovation & Arts</h4>
-            <p class="text-xs text-slate-500 mt-1">Creativity and innovation workshops across disciplines.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACADEMICS -->
-    <section id="academics" class="px-4 py-8">
-      <div class="bg-white rounded-xl p-4 shadow-sm">
-        <h3 class="text-lg font-semibold text-lasco-navy">Programs & Subjects</h3>
-        <p class="text-sm text-slate-600 mt-2">A balanced curriculum that prepares students for university and leadership roles in community and industry.</p>
-
-        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <article class="p-3 border rounded-lg">
-            <h4 class="font-semibold">Ordinary Level Sciences</h4>
-            <ul class="text-xs text-slate-600 mt-2 space-y-1 list-disc list-inside">
-              <li>Mathematics</li>
-              <li>Additional Mathematics</li>
-              <li>Chemistry</li>
-              <li>Biology</li>
-              <li>Physics</li>
-              <li>French</li>
-              <li>English</li>
-            </ul>
-          </article>
-
-          <article class="p-3 border rounded-lg">
-            <h4 class="font-semibold">Advanced Level Sciences</h4>
-            <ul class="text-xs text-slate-600 mt-2 space-y-1 list-disc list-inside">
-              <li>Physics</li>
-              <li>Chemistry</li>
-              <li>Biology</li>
-              <li>Mathematics with Statistics</li>
-              <li>ICT & Computer Science</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- LABORATORY -->
-<section id="laboratory" class="px-4 py-8">
-  <div class="bg-white rounded-xl p-4 shadow-sm">
-    <h3 class="text-lg font-semibold text-lasco-navy">Our Laboratories</h3>
-    <p class="text-sm text-slate-600 mt-2">State-of-the-art labs that provide hands-on experience in sciences and technology.</p>
-
-    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-4 md:grid-cols-5 gap-3">
-      <div class="p-2 rounded-lg overflow-hidden border">
-        <img src="https://i.postimg.cc/zXDZCJJ6/IMG-20251019-WA0029.jpg" alt="Chemistry Lab" class="w-full h-36 object-cover rounded-md">
-        <h4 class="mt-2 font-semibold text-sm">Chemistry Lab</h4>
-      </div>
-      <div class="p-2 rounded-lg overflow-hidden border">
-        <img src="https://i.postimg.cc/qqxrkqpy/IMG-20251019-WA0027.jpg" alt="Biology Lab" class="w-full h-36 object-cover rounded-md">
-        <h4 class="mt-2 font-semibold text-sm">Biology Lab</h4>
-      </div>
-      <div class="p-2 rounded-lg overflow-hidden border">
-        <img src="https://i.postimg.cc/zGJw7Gv0/IMG-20251019-WA0033.jpg" alt="Physics Lab" class="w-full h-36 object-cover rounded-md">
-        <h4 class="mt-2 font-semibold text-sm">Physics Lab</h4>
-      </div>
-      <div class="p-2 rounded-lg overflow-hidden border">
-        <img src="https://i.postimg.cc/4xrSSZgN/IMG-20251019-WA0030.jpg" alt="Physics Lab" class="w-full h-36 object-cover rounded-md">
-        <h4 class="mt-2 font-semibold text-sm">Food Science</h4>
-      </div>
-      <div class="p-2 rounded-lg overflow-hidden border">
-        <img src="https://picsum.photos/seed/lab3/600/400" alt="Physics Lab" class="w-full h-36 object-cover rounded-md">
-        <h4 class="mt-2 font-semibold text-sm">Computer Science</h4>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- ADMISSIONS -->
-    <section id="admissions" class="px-4 py-8">
-      <div class="bg-white rounded-xl p-4 shadow-sm">
-        <h3 class="text-lg font-semibold text-lasco-navy">Admissions</h3>
-        <p class="text-sm text-slate-600 mt-2">Join a community that fosters growth, leadership and excellence. Fill the form below to start your application.</p>
-
-        <form class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3" onsubmit="event.preventDefault(); alert('Application submitted (demo)');">
-          <input required class="px-3 py-2 border rounded-md text-sm" type="text" placeholder="Full name">
-          <input required class="px-3 py-2 border rounded-md text-sm" type="email" placeholder="Email address">
-          <input required class="px-3 py-2 border rounded-md text-sm" type="tel" placeholder="Phone number">
-
-          <select required class="px-3 py-2 border rounded-md text-sm">
-            <option value="">Select Program</option>
-            <option>Ordinary Level Sciences</option>
-            <option>Advanced Level Sciences</option>
-            <option>Ordinary Level Arts</option>
-            <option>Advanced Level Arts</option>
-          </select>
-
-          <textarea class="sm:col-span-2 px-3 py-2 border rounded-md text-sm" rows="4" placeholder="Tell us why you want to join LASCO"></textarea>
-          <button class="sm:col-span-2 py-2 rounded-md bg-lasco-navy text-white font-semibold">Submit Application</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- LOCATION / CAMPUS -->
-<section id="location" class="px-4 py-8">
-  <div class="bg-white rounded-xl p-4 shadow-sm">
-    <h3 class="text-lg font-semibold text-lasco-navy">Our Campus & Location</h3>
-    <p class="text-sm text-slate-600 mt-2">Discover where our campus is located and explore the surroundings.</p>
-
-    <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
-      <img src="https://i.postimg.cc/wv6dTJjw/Screenshot-20251017-210014.jpg" alt="Campus Entrance" class="w-full h-36 object-cover rounded-md">
-      <img src="https://picsum.photos/seed/location2/600/400" alt="Sports Field" class="w-full h-36 object-cover rounded-md">
-      <img src="https://picsum.photos/seed/location3/600/400" alt="Library & Study Area" class="w-full h-36 object-cover rounded-md">
-      <img src="https://picsum.photos/seed/location4/600/400" alt="Campus Gardens" class="w-full h-36 object-cover rounded-md">
-      <img src="https://picsum.photos/seed/location5/600/400" alt="Auditorium" class="w-full h-36 object-cover rounded-md">
-      <img src="https://picsum.photos/seed/location6/600/400" alt="Nearby Landmark" class="w-full h-36 object-cover rounded-md">
-    </div>
-  </div>
-</section>
-
-    <!-- GALLERY -->
-    <section id="gallery" class="px-4 py-8">
-      <div class="bg-white rounded-xl p-4 shadow-sm">
-        <h3 class="text-lg font-semibold text-lasco-navy">Gallery</h3>
-        <p class="text-sm text-slate-600 mt-2">Photos from campus life, events and accomplishments.</p>
-
-        <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
-          <img src="https://i.postimg.cc/5NJ892BX/IMG-20251019-WA0018.jpg" alt="gallery 1" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
-          <img src="https://i.postimg.cc/Jz4JJYd0/IMG-20251019-WA0020.jpg" alt="gallery 2" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
-          <img src="https://i.postimg.cc/xjvbZVW4/IMG-20251019-WA0036.jpg" alt="gallery 3" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
-          <img src="https://i.postimg.cc/qR8gW2Zh/IMG-20251019-WA0024.jpg" alt="gallery 4" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
-          <img src="https://i.postimg.cc/L8n52cbM/IMG-20251019-WA0023.jpg" alt="gallery 5" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
-          <img src="https://i.postimg.cc/L5947wPh/IMG-20251019-WA0031.jpg" alt="gallery 6" class="w-full h-36 object-cover rounded-md cursor-pointer" onclick="openLightbox(this.src)">
-        </div>
-      </div>
-    </section>
-    
-
-    <!-- CONTACT -->
-    <section id="contact" class="px-4 py-8">
-      <div class="bg-white rounded-xl p-4 shadow-sm">
-        <h3 class="text-lg font-semibold text-lasco-navy">Contact & Visit</h3>
-        <p class="text-sm text-slate-600 mt-2">Questions? Reach out or schedule a visit.</p>
-
-        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <form class="space-y-3" onsubmit="event.preventDefault(); alert('Message sent (demo)');">
-            <input class="w-full px-3 py-2 border rounded-md text-sm" type="text" placeholder="Full name" required>
-            <input class="w-full px-3 py-2 border rounded-md text-sm" type="email" placeholder="Email" required>
-            <input class="w-full px-3 py-2 border rounded-md text-sm" type="tel" placeholder="Phone">
-            <textarea class="w-full px-3 py-2 border rounded-md text-sm" rows="4" placeholder="Message"></textarea>
-            <button class="py-2 px-4 rounded-md bg-lasco-navy text-white font-semibold">Send Message</button>
-          </form>
-
-          <aside class="p-3 bg-slate-50 rounded-md">
-            <h4 class="font-semibold text-sm">Visit us</h4>
-            <p class="text-xs text-slate-600 mt-2">Douala, Cameroon — call +237 6XX XXX XXX or email admissions@lasco.edu.cm</p>
-            <div class="mt-4 text-xs text-slate-500">Open: Mon — Fri • 8:00 — 16:00</div>
-            <div class="mt-4">
-              <a class="inline-block text-xs font-semibold px-3 py-2 rounded-md border" href="#admissions">Start Application</a>
+    <!-- STICKY NAV -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3" data-aos="fade-right">
+                <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-lasco-navy to-lasco-navy-2 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                    <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h1 class="text-base font-bold leading-tight text-lasco-navy">LIFE ANGLO SAXON COLLEGE</h1>
+                    <p class="text-xs text-lasco-gold font-medium">Excellence With Integrity</p>
+                </div>
             </div>
-          </aside>
+
+            <!-- Desktop nav -->
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+                <a href="#home" class="hover:text-lasco-navy-2 transition-colors">Home</a>
+                <a href="#about" class="hover:text-lasco-navy-2 transition-colors">About</a>
+                <a href="#academics" class="hover:text-lasco-navy-2 transition-colors">Academics</a>
+                <a href="#results" class="hover:text-lasco-navy-2 transition-colors">GCE Results</a>
+                <a href="#news" class="hover:text-lasco-navy-2 transition-colors">News</a>
+                <a href="#laboratory" class="hover:text-lasco-navy-2 transition-colors">Laboratory</a>
+                <a href="#location" class="hover:text-lasco-navy-2 transition-colors">Location</a>
+                <a href="#gallery" class="hover:text-lasco-navy-2 transition-colors">Gallery</a>
+                <a href="#contact"
+                    class="px-4 py-2 rounded-lg bg-gradient-to-r from-lasco-navy to-lasco-navy-2 text-white hover:from-lasco-navy-2 hover:to-lasco-navy transition-all duration-300 shadow-lg hover:shadow-xl">Contact</a>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <div class="lg:hidden">
+                <button id="mobileBtn" aria-expanded="false" aria-controls="mobileMenu"
+                    class="p-2 rounded-lg border border-slate-200 hover:bg-slate-50 transition-colors">
+                    <i data-lucide="menu" class="h-5 w-5"></i>
+                </button>
+            </div>
         </div>
-      </div>
-    </section>
 
-    <div class="h-8"></div>
-  </main>
+        <!-- Mobile nav panel -->
+        <div id="mobileMenu" class="lg:hidden border-t border-slate-100 bg-white/98 backdrop-blur-md hidden">
+            <nav class="px-4 py-4 flex flex-col gap-2">
+                <a href="#home" class="py-3 px-3 rounded-lg hover:bg-slate-50 transition-colors">Home</a>
+                <a href="#about" class="py-3 px-3 rounded-lg hover:bg-slate-50 transition-colors">About</a>
+                <a href="#academics" class="py-3 px-3 rounded-lg hover:bg-slate-50 transition-colors">Academics</a>
+                <a href="#results" class="py-3 px-3 rounded-lg hover:bg-slate-50 transition-colors">GCE Results</a>
+                <a href="#news" class="py-3 px-3 rounded-lg hover:bg-slate-50 transition-colors">News</a>
+                <a href="#laboratory" class="py-3 px-3 rounded-lg hover:bg-slate-50 transition-colors">Laboratory</a>
+                <a href="#location" class="py-3 px-3 rounded-lg hover:bg-slate-50 transition-colors">Location</a>
+                <a href="#gallery" class="py-3 px-3 rounded-lg hover:bg-slate-50 transition-colors">Gallery</a>
+                <a href="#contact"
+                    class="py-3 px-3 rounded-lg bg-gradient-to-r from-lasco-navy to-lasco-navy-2 text-white text-center font-medium">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Footer -->
-  <footer class="bg-lasco-navy text-white py-6">
-    <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3">
-      <div>
-        <div class="font-semibold">LIFE ANGLO SAXON COLLEGE</div>
-        <div class="text-xs text-slate-200">Excellence With Integrity — Douala, Cameroon</div>
-      </div>
-      <div class="text-xs text-slate-200">© 2025 LIFE ANGLO SAXON COLLEGE. All rights reserved.</div>
-    </div>
-  </footer>
+    <main id="main" class="max-w-7xl mx-auto">
 
-  <!-- Lightbox modal -->
-  <div id="lightbox" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 p-4">
-    <img id="lightboxImg" src="" alt="" class="max-w-full max-h-[80vh] rounded-md shadow-lg">
-  </div>
+        <!-- HERO -->
+        <section id="home"
+            class="relative clip-hero h-[60vh] sm:h-[70vh] lg:h-[80vh] rounded-b-3xl overflow-hidden mx-4 mt-4"
+            style="background-image:url('https://i.postimg.cc/cCg100rR/IMG-20251019-WA0016.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-br from-lasco-navy/60 via-lasco-navy-2/40 to-transparent"></div>
+            <div class="relative px-6 lg:px-12 h-full flex flex-col justify-center">
+                <div class="max-w-3xl">
+                    <span
+                        class="inline-block bg-gradient-to-r from-lasco-gold to-lasco-gold-light text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg animate-bounce-gentle"
+                        data-aos="fade-up">
+                        LIFE ANGLO SAXON COLLEGE
+                    </span>
+                    <h2 class="mt-6 text-white text-3xl sm:text-4xl lg:text-6xl font-black leading-tight"
+                        data-aos="fade-up" data-aos-delay="200">
+                        Where resilience becomes <span class="text-lasco-gold">leadership</span>
+                    </h2>
+                    <p class="mt-4 text-white/90 text-base lg:text-lg leading-relaxed" data-aos="fade-up"
+                        data-aos-delay="400">
+                        We cultivate grit, service and scholarship — preparing students to lead with empathy and
+                        strength in tomorrow's world.
+                    </p>
 
-  <script>
-    // Mobile menu toggle
-    const mobileBtn = document.getElementById('mobileBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileBtn.addEventListener('click', () => {
-      const isHidden = mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden', !isHidden);
-      mobileBtn.setAttribute('aria-expanded', String(isHidden));
-      // rotate icon
-      const icon = document.getElementById('menuIcon');
-      if (!isHidden) {
-        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
-      }
-    });
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="600">
+                        <a href="#admissions"
+                            class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-lasco-gold to-lasco-gold-light px-8 py-4 text-base font-bold text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                            <i data-lucide="user-plus" class="w-5 h-5 mr-2"></i>
+                            Apply Now
+                        </a>
+                        <a href="#about"
+                            class="inline-flex items-center justify-center rounded-xl border-2 border-white/30 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-all duration-300">
+                            <i data-lucide="arrow-right" class="w-5 h-5 mr-2"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    // Lightbox helpers
-    function openLightbox(src){
-      const lb = document.getElementById('lightbox');
-      const img = document.getElementById('lightboxImg');
-      img.src = src;
-      lb.classList.remove('hidden');
-      lb.classList.add('flex');
-    }
-    document.getElementById('lightbox').addEventListener('click', (e)=>{
-      if(e.target.id === 'lightbox' || e.target.id === 'lightboxImg'){
-        const lb = document.getElementById('lightbox');
-        lb.classList.remove('flex');
-        lb.classList.add('hidden');
-        document.getElementById('lightboxImg').src = '';
-      }
-    });
+            <!-- Floating stats card -->
+            <aside
+                class="hidden lg:block absolute right-8 bottom-12 w-80 glass-effect rounded-2xl p-6 shadow-2xl border border-white/20"
+                data-aos="slide-in-right" data-aos-delay="800">
+                <h3 class="text-lg font-bold text-white mb-4">Excellence in Numbers</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-lasco-gold">98%</div>
+                        <div class="text-xs text-white/80">Pass Rate</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-lasco-gold">15+</div>
+                        <div class="text-xs text-white/80">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-lasco-gold">500+</div>
+                        <div class="text-xs text-white/80">Graduates</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-lasco-gold">25+</div>
+                        <div class="text-xs text-white/80">Expert Teachers</div>
+                    </div>
+                </div>
+            </aside>
+        </section>
 
-    // Smooth hash scrolling behavior (offset for sticky header)
-    const headerHeight = document.querySelector('header').offsetHeight;
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const href = a.getAttribute('href');
-        if(!href.startsWith('#') || href === '#') return;
-        const el = document.querySelector(href);
-        if(!el) return;
-        e.preventDefault();
-        const y = el.getBoundingClientRect().top + window.scrollY - headerHeight - 12;
-        window.scrollTo({top: y, behavior: 'smooth'});
-      });
-    });
-  </script>
-</body>
-</html>
+        <!-- ABOUT -->
+        <section id="about" class="px-4 lg:px-8 py-16">
+            <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-xl hover-lift" data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-lasco-navy mb-4">Our Mission</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-lasco-gold to-lasco-gold-light mx-auto rounded-full">
+                    </div>
+                </div>
+
+                <p class="text-lg text-slate-600 text-center max-w-4xl mx-auto mb-12" data-aos="fade-up"
+                    data-aos-delay="200">
+                    To develop confident leaders rooted in service and scholarship. We focus on holistic development:
+                    academics, arts and athletics — guided by strong mentorship and innovative teaching methods.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 rounded-xl border-2 border-slate-100 hover:border-lasco-navy-light hover:shadow-lg transition-all duration-300 hover-lift"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-lasco-navy to-lasco-navy-2 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="book-open" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-lasco-navy mb-2">Academic Rigor</h4>
+                        <p class="text-sm text-slate-600">Advanced courses, experienced faculty, and proven outcomes
+                            that prepare students for university success.</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl border-2 border-slate-100 hover:border-lasco-navy-light hover:shadow-lg transition-all duration-300 hover-lift"
+                        data-aos="fade-up" data-aos-delay="400">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-lasco-gold to-lasco-gold-light rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="heart" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-lasco-navy mb-2">Character & Service</h4>
+                        <p class="text-sm text-slate-600">Community projects and leadership labs that build character
+                            and instill values of service.</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl border-2 border-slate-100 hover:border-lasco-navy-light hover:shadow-lg transition-all duration-300 hover-lift"
+                        data-aos="fade-up" data-aos-delay="500">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-lasco-navy-light to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="lightbulb" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-lasco-navy mb-2">Innovation & Arts</h4>
+                        <p class="text-sm text-slate-600">Creativity and innovation workshops across disciplines that
+                            foster critical thinking.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACADEMICS -->
+        <section id="academics" class="px-4 lg:px-8 py-16">
+            <div class="bg-gradient-to-br from-lasco-navy to-lasco-navy-2 rounded-2xl p-8 lg:p-12 shadow-xl text-white"
+                data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl lg:text-4xl font-bold mb-4">Programs & Subjects</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-lasco-gold to-lasco-gold-light mx-auto rounded-full">
+                    </div>
+                    <p class="text-lg text-blue-100 mt-6 max-w-3xl mx-auto">
+                        A balanced curriculum that prepares students for university and leadership roles in community
+                        and industry.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <article class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover-lift"
+                        data-aos="fade-right">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-lasco-gold rounded-xl flex items-center justify-center mr-4">
+                                <i data-lucide="calculator" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-xl">Ordinary Level Sciences</h4>
+                        </div>
+                        <ul class="text-blue-100 space-y-2">
+                            <li class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-lasco-gold"></i>Mathematics</li>
+                            <li class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-lasco-gold"></i>Additional Mathematics</li>
+                            <li class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-lasco-gold"></i>Chemistry</li>
+                            <li class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-lasco-gold"></i>Biology</li>
+                            <li class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-lasco-gold"></i>Physics</li>
+                            <li class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-lasco-gold"></i>French</li>
+                            <li class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-lasco-gold"></i>English Language</li>
+                        </ul>
+                    </article>
+
+                    <article class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover-lift"
+                        data-aos="fade-left">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-lasco-gold rounded-xl flex items-center justify-center mr-4">
+                                <i data-lucide="atom" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-xl">Advanced Level Sciences</h4>
+                        </div>
+                        <ul class="text-blue-100 space-y-2">
+                            <li class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-lasco-gold"></i>Physics</li>
+                            <li class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-lasco-gold"></i>Chemistry</li>
+                            <li class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-lasco-gold"></i>Biology</li>
+                            <li class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-lasco-gold"></i>Mathematics with Statistics</li>
+                            <li class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-lasco-gold"></i>ICT & Computer Science</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- GCE RESULTS -->
+        <section id="results" class="px-4 lg:px-8 py-16">
+            <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-xl" data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-lasco-navy mb-4">GCE Results 2024</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-lasco-gold to-lasco-gold-light mx-auto rounded-full">
+                    </div>
+                    <p class="text-lg text-slate-600 mt-6">Outstanding performance in both Ordinary and Advanced Level
+                        examinations</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Ordinary Level Results -->
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200"
+                        data-aos="fade-right">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mr-4">
+                                <i data-lucide="award" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-green-800">Ordinary Level Results</h4>
+                                <p class="text-green-600">Overall Pass Rate: 96.5%</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-white rounded-lg p-4 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold text-gray-700">Grade A (9-8)</span>
+                                    <span class="text-green-600 font-bold">45%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 45%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-lg p-4 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold text-gray-700">Grade B (7-6)</span>
+                                    <span class="text-blue-600 font-bold">35%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-500 h-2 rounded-full" style="width: 35%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-lg p-4 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold text-gray-700">Grade C (5-4)</span>
+                                    <span class="text-yellow-600 font-bold">16.5%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 16.5%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-green-100 rounded-lg">
+                            <h5 class="font-bold text-green-800 mb-2">Top Performers</h5>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• 12 students achieved 8+ A grades</li>
+                                <li>• 98% pass rate in Mathematics</li>
+                                <li>• 100% pass rate in English Language</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Level Results -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200"
+                        data-aos="fade-left">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mr-4">
+                                <i data-lucide="trophy" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-blue-800">Advanced Level Results</h4>
+                                <p class="text-blue-600">Overall Pass Rate: 94.2%</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-white rounded-lg p-4 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold text-gray-700">Grade A</span>
+                                    <span class="text-blue-600 font-bold">38%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-500 h-2 rounded-full" style="width: 38%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-lg p-4 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold text-gray-700">Grade B</span>
+                                    <span class="text-indigo-600 font-bold">32%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-indigo-500 h-2 rounded-full" style="width: 32%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-lg p-4 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold text-gray-700">Grade C</span>
+                                    <span class="text-purple-600 font-bold">24.2%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-purple-500 h-2 rounded-full" style="width: 24.2%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-blue-100 rounded-lg">
+                            <h5 class="font-bold text-blue-800 mb-2">University Admissions</h5>
+                            <ul class="text-sm text-blue-700 space-y-1">
+                                <li>• 85% gained university admission</li>
+                                <li>• 15 students to international universities</li>
+                                <li>• 95% pass rate in Sciences</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWS SECTION -->
+        <section id="news" class="px-4 lg:px-8 py-16">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h3 class="text-3xl lg:text-4xl font-bold text-lasco-navy mb-4">Latest News & Achievements</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-lasco-gold to-lasco-gold-light mx-auto rounded-full"></div>
+                <p class="text-lg text-slate-600 mt-6">Stay updated with our school's latest exploits and
+                    accomplishments</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden news-card" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div
+                        class="h-48 bg-gradient-to-br from-lasco-navy to-lasco-navy-2 flex items-center justify-center">
+                        <i data-lucide="trophy" class="w-16 h-16 text-lasco-gold"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span
+                                class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded-full">Achievement</span>
+                            <span class="text-slate-500 text-xs ml-2">Nov 5, 2024</span>
+                        </div>
+                        <h4 class="font-bold text-lg text-lasco-navy mb-2">National Science Competition Winners</h4>
+                        <p class="text-slate-600 text-sm mb-4">Our students secured 1st place in the National Secondary
+                            School Science Competition, showcasing excellence in Physics and Chemistry.</p>
+                        <a href="#"
+                            class="text-lasco-navy font-semibold text-sm hover:text-lasco-navy-2 transition-colors">Read
+                            more →</a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden news-card" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div
+                        class="h-48 bg-gradient-to-br from-lasco-gold to-lasco-gold-light flex items-center justify-center">
+                        <i data-lucide="users" class="w-16 h-16 text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full">Community</span>
+                            <span class="text-slate-500 text-xs ml-2">Oct 28, 2024</span>
+                        </div>
+                        <h4 class="font-bold text-lg text-lasco-navy mb-2">Community Outreach Program</h4>
+                        <p class="text-slate-600 text-sm mb-4">Students and faculty organized a successful health
+                            awareness campaign in local communities, impacting over 500 families.</p>
+                        <a href="#"
+                            class="text-lasco-navy font-semibold text-sm hover:text-lasco-navy-2 transition-colors">Read
+                            more →</a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden news-card" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                        <i data-lucide="graduation-cap" class="w-16 h-16 text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span
+                                class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded-full">Academic</span>
+                            <span class="text-slate-500 text-xs ml-2">Oct 15, 2024</span>
+                        </div>
+                        <h4 class="font-bold text-lg text-lasco-navy mb-2">New STEM Laboratory Inauguration</h4>
+                        <p class="text-slate-600 text-sm mb-4">State-of-the-art STEM laboratory officially opened,
+                            featuring advanced equipment for hands-on learning experiences.</p>
+                        <a href="#"
+                            class="text-lasco-navy font-semibold text-sm hover:text-lasco-navy-2 transition-colors">Read
+                            more →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- LABORATORY with 360 Carousel -->
+        <section id="laboratory" class="px-4 lg:px-8 py-16">
+            <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-xl" data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-lasco-navy mb-4">Our Laboratories</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-lasco-gold to-lasco-gold-light mx-auto rounded-full">
+                    </div>
+                    <p class="text-lg text-slate-600 mt-6">State-of-the-art labs that provide hands-on experience in
+                        sciences and technology</p>
+                </div>
+
+                <!-- 360 Carousel -->
+                <div class="swiper labSwiper mb-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="relative rounded-2xl overflow-hidden group">
+                                <img src="https://i.postimg.cc/zXDZCJJ6/IMG-20251019-WA0029.jpg" alt="Chemistry Lab"
+                                    class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Chemistry Laboratory</h4>
+                                    <p class="text-white/90">Advanced equipment for organic and inorganic chemistry
+                                        experiments</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="relative rounded-2xl overflow-hidden group">
+                                <img src="https://i.postimg.cc/qqxrkqpy/IMG-20251019-WA0027.jpg" alt="Biology Lab"
+                                    class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Biology Laboratory</h4>
+                                    <p class="text-white/90">Microscopy and life sciences research facilities</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="relative rounded-2xl overflow-hidden group">
+                                <img src="https://i.postimg.cc/zGJw7Gv0/IMG-20251019-WA0033.jpg" alt="Physics Lab"
+                                    class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Physics Laboratory</h4>
+                                    <p class="text-white/90">Modern physics equipment and experimental setups</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="relative rounded-2xl overflow-hidden group">
+                                <img src="https://i.postimg.cc/4xrSSZgN/IMG-20251019-WA0030.jpg" alt="Food Science Lab"
+                                    class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Food Science Laboratory</h4>
+                                    <p class="text-white/90">Nutrition and food technology research center</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="relative rounded-2xl overflow-hidden group">
+                                <img src="https://i.postimg.cc/c4M9y4n7/cs-lab.jpg" alt="Computer Lab"
+                                    class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Computer Science Lab</h4>
+                                    <p class="text-white/90">Latest technology for programming and ICT studies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+                <!-- Lab Features -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center p-6 rounded-xl bg-slate-50 hover-lift">
+                        <div class="w-12 h-12 bg-lasco-navy rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="microscope" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lasco-navy mb-2">Advanced Equipment</h4>
+                        <p class="text-slate-600 text-sm">Latest scientific instruments and technology</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl bg-slate-50 hover-lift">
+                        <div class="w-12 h-12 bg-lasco-gold rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lasco-navy mb-2">Expert Supervision</h4>
+                        <p class="text-slate-600 text-sm">Qualified lab technicians and teachers</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl bg-slate-50 hover-lift">
+                        <div
+                            class="w-12 h-12 bg-lasco-navy-light rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lasco-navy mb-2">Safety First</h4>
+                        <p class="text-slate-600 text-sm">Comprehensive safety protocols and equipment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOCATION with Google Map -->
+        <section id="location" class="px-4 lg:px-8 py-16">
+            <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-xl" data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-lasco-navy mb-4">Our Campus & Location</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-lasco-gold to-lasco-gold-light mx-auto rounded-full">
+                    </div>
+                    <p class="text-lg text-slate-600 mt-6">Discover where our campus is located and explore the
+                        surroundings</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Google Map -->
+                    <div class="rounded-2xl overflow-hidden shadow-lg" data-aos="fade-right">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8234567890123!2d9.7084!3d4.0604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMDMnMzciTiA5wrA0MicyOSJF!5e0!3m2!1sen!2scm!4v1699123456789!5m2!1sen!2scm"
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" class="rounded-2xl">
+                        </iframe>
+                    </div>
+
+                    <!-- Campus Images -->
+                    <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                        <img src="https://i.postimg.cc/rFPT4JfH/main-entrance.jpg" alt="Campus Entrance"
+                            class="w-full h-44 object-cover rounded-xl hover-lift cursor-pointer"
+                            onclick="openLightbox(this.src)">
+                            <img src="https://i.postimg.cc/hP5nmr2w/me2.jpg" alt="Campus Entrance 2"
+                            class="w-full h-44 object-cover rounded-xl hover-lift cursor-pointer"
+                            onclick="openLightbox(this.src)">
+                        <img src="https://i.postimg.cc/dtxFCB5N/left-curve.jpg" alt="rigt curve"
+                            class="w-full h-44 object-cover rounded-xl hover-lift cursor-pointer"
+                            onclick="openLightbox(this.src)">
+                        <img src="https://i.postimg.cc/SNv49rgB/shcool-gate.jpg" alt="after curve"
+                            class="w-full h-44 object-cover rounded-xl hover-lift cursor-pointer"
+                            onclick="openLightbox(this.src)">
+                        <img src="https://i.postimg.cc/Gh5RDQXV/sg2.jpg" alt="shcool gate"
+                            class="w-full h-44 object-cover rounded-xl hover-lift cursor-pointer"
+                            onclick="openLightbox(this.src)">
+                    </div>
+                </div>
+
+                <!-- Location Info -->
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center p-6 rounded-xl bg-slate-50">
+                        <div class="w-12 h-12 bg-lasco-navy rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lasco-navy mb-2">Address</h4>
+                        <p class="text-slate-600 text-sm">eEntree G.M.C, Bwadibo,Douala, Littoral Region<br>Cameroon</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl bg-slate-50">
+                        <div class="w-12 h-12 bg-lasco-gold rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="car" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lasco-navy mb-2">Transportation</h4>
+                        <p class="text-slate-600 text-sm">Easily accessible by public transport<br>Parking available</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl bg-slate-50">
+                        <div
+                            class="w-12 h-12 bg-lasco-navy-light rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lasco-navy mb-2">School Hours</h4>
+                        <p class="text-slate-600 text-sm">Mon - Fri: 7:30 AM - 4:00 PM<br>Sat: 8:00 AM - 12:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADMISSIONS -->
+        <section id="admissions" class="px-4 lg:px-8 py-16">
+            <div class="bg-gradient-to-br from-lasco-navy to-lasco-navy-2 rounded-2xl p-8 lg:p-12 shadow-xl text-white"
+                data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl lg:text-4xl font-bold mb-4">Join Our Community</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-lasco-gold to-lasco-gold-light mx-auto rounded-full">
+                    </div>
+                    <p class="text-lg text-blue-100 mt-6 max-w-3xl mx-auto">
+                        Join a community that fosters growth, leadership and excellence. Fill the form below to start
+                        your application.
+                    </p>
+                </div>
+
+                <form class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6"
+                    onsubmit="event.preventDefault(); alert('Application submitted successfully! We will contact you soon.');"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-blue-100">Full Name *</label>
+                        <input required
+                            class="w-full px-4 py-3 border border-white/20 rounded-xl bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-lasco-gold"
+                            type="text" placeholder="Enter your full name">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-blue-100">Email Address *</label>
+                        <input required
+                            class="w-full px-4 py-3 border border-white/20 rounded-xl bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-lasco-gold"
+                            type="email" placeholder="Enter your email">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-blue-100">Phone Number *</label>
+                        <input required
+                            class="w-full px-4 py-3 border border-white/20 rounded-xl bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-lasco-gold"
+                            type="tel" placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-blue-100">Program of Interest *</label>
+                        <select required
+                            class="w-full px-4 py-3 border border-white/20 rounded-xl bg-white/10 backdrop-blur-sm text-white focus:outline-none focus:ring-2 focus:ring-lasco-gold">
+                            <option value="" class="text-gray-900">Select Program</option>
+                            <option value="ol-sciences" class="text-gray-900">Ordinary Level Sciences</option>
+                            <option value="al-sciences" class="text-gray-900">Advanced Level Sciences</option>
+                            <option value="ol-arts" class="text-gray-900">Ordinary Level Arts</option>
+                            <option value="al-arts" class="text-gray-900">Advanced Level Arts</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="block text-sm font-semibold text-blue-100">Why do you want to join LASCO?</label>
+                        <textarea
+                            class="w-full px-4 py-3 border border-white/20 rounded-xl bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-lasco-gold"
+                            rows="4" placeholder="Tell us about your goals and aspirations..."></textarea>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <button
+                            class="w-full py-4 rounded-xl bg-gradient-to-r from-lasco-gold to-lasco-gold-light text-white font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                            <i data-lucide="send" class="w-5 h-5 inline mr-2"></i>
+                            Submit Application
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery" class="px-4 lg:px-8 py-16">
+            <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-xl" data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-lasco-navy mb-4">Gallery</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-lasco-gold to-lasco-gold-light mx-auto rounded-full">
+                    </div>
+                    <p class="text-lg text-slate-600 mt-6">Photos from campus life, events and accomplishments</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <img src="https://i.postimg.cc/5NJ892BX/IMG-20251019-WA0018.jpg" alt="gallery 1"
+                        class="w-full h-48 object-cover rounded-xl cursor-pointer hover-lift transition-all duration-300"
+                        onclick="openLightbox(this.src)" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://i.postimg.cc/Jz4JJYd0/IMG-20251019-WA0020.jpg" alt="gallery 2"
+                        class="w-full h-48 object-cover rounded-xl cursor-pointer hover-lift transition-all duration-300"
+                        onclick="openLightbox(this.src)" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://i.postimg.cc/xjvbZVW4/IMG-20251019-WA0036.jpg" alt="gallery 3"
+                        class="w-full h-48 object-cover rounded-xl cursor-pointer hover-lift transition-all duration-300"
+                        onclick="openLightbox(this.src)" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://i.postimg.cc/qR8gW2Zh/IMG-20251019-WA0024.jpg" alt="gallery 4"
+                        class="w-full h-48 object-cover rounded-xl cursor-pointer hover-lift transition-all duration-300"
+                        onclick="openLightbox(this.src)" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://i.postimg.cc/L8n52cbM/IMG-20251019-WA0023.jpg" alt="gallery 5"
+                        class="w-full h-48 object-cover rounded-xl cursor-pointer hover-lift transition-all duration-300"
+                        onclick="openLightbox(this.src)" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://i.postimg.cc/L5947wPh/IMG-20251019-WA0031.jpg" alt="gallery 6"
+                        class="w-full h-48 object-cover rounded-xl cursor-pointer hover-lift transition-all duration-300"
+                        onclick="openLightbox(this.src)" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://i.postimg.cc/pLfrnMJ2/MEZZY.jpg" alt="gallery 7"
+                        class="w-full h-48 object-cover rounded-xl cursor-pointer hover-lift transition-all duration-300"
+                        onclick="openLightbox(this.src)" data-aos="fade-up" data-aos-delay="700">
+                    <img src="https://i.postimg.cc/SK7Nc92z/need.jpg" alt="gallery 8"
+                        class="w-full h-48 object-cover rounded-xl cursor-pointer hover-lift transition-all duration-300"
+                        onclick="openLightbox(this.src)" data-aos="fade-up" data-aos-delay="800">
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="px-4 lg:px-8 py-16">
+            <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-xl" data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-lasco-navy mb-4">Contact & Visit</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-lasco-gold to-lasco-gold-light mx-auto rounded-full">
+                    </div>
+                    <p class="text-lg text-slate-600 mt-6">Questions? Reach out or schedule a visit</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <form class="space-y-6"
+                        onsubmit="event.preventDefault(); alert('Message sent successfully! We will get back to you soon.');"
+                        data-aos="fade-right">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-lasco-navy">Full Name *</label>
+                            <input
+                                class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-lasco-navy focus:border-transparent"
+                                type="text" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-lasco-navy">Email Address *</label>
+                            <input
+                                class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-lasco-navy focus:border-transparent"
+                                type="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-lasco-navy">Phone Number</label>
+                            <input
+                                class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-lasco-navy focus:border-transparent"
+                                type="tel" placeholder="Enter your phone number">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-lasco-navy">Message *</label>
+                            <textarea
+                                class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-lasco-navy focus:border-transparent"
+                                rows="5" placeholder="How can we help you?" required></textarea>
+                        </div>
+
+                        <button
+                            class="w-full py-4 rounded-xl bg-gradient-to-r from-lasco-navy to-lasco-navy-2 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                            <i data-lucide="send" class="w-5 h-5 inline mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+
+                    <aside class="space-y-8" data-aos="fade-left">
+                        <div class="p-6 bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl">
+                            <h4 class="font-bold text-xl text-lasco-navy mb-6">Visit Our Campus</h4>
+
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-4">
+                                    <div
+                                        class="w-10 h-10 bg-lasco-navy rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-lasco-navy">Address</h5>
+                                        <p class="text-slate-600 text-sm">Douala, Littoral Region<br>Cameroon</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div
+                                        class="w-10 h-10 bg-lasco-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="phone" class="w-5 h-5 text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-lasco-navy">Phone</h5>
+                                        <p class="text-slate-600 text-sm">+237 6XX XXX XXX</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div
+                                        class="w-10 h-10 bg-lasco-navy-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="mail" class="w-5 h-5 text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-lasco-navy">Email</h5>
+                                        <p class="text-slate-600 text-sm">admissions@lasco.edu.cm</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div
+                                        class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="clock" class="w-5 h-5 text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-lasco-navy">Office Hours</h5>
+                                        <p class="text-slate-600 text-sm">Mon - Fri: 8:00 AM - 4:00 PM<br>Sat: 8:00 AM -
+                                            12:00 PM</p></div>
+                                            </div>
+                                            </div>
+
+                                            <div class="mt-6">
+                                                <a href="#admissions"
+                                                    class="inline-flex items-center justify-center w-full py-3 px-6 rounded-xl bg-gradient-to-r from-lasco-navy to-lasco-navy-2 text-white font-semibold hover:from-lasco-navy-2 hover:to-lasco-navy transition-all duration-300">
+                                                    <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
+                                                    Schedule a Visit
+                                                </a>
+                                            </div>
+                                            </div>
+                                            </aside>
+                                            </div>
+                                            </div>
+                                            </section>
+
+                                            <div class="h-8"></div>
+                                            </main>
+
+                                            <!-- Footer -->
+                                            <footer class="bg-gradient-to-r from-lasco-navy to-lasco-navy-2 text-white py-12">
+                                                <div class="max-w-7xl mx-auto px-4">
+                                                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                                                        <!-- Logo and Description -->
+                                                        <div class="md:col-span-2">
+                                                            <div class="flex items-center gap-3 mb-4">
+                                                                <div class="w-12 h-12 rounded-xl bg-lasco-gold flex items-center justify-center">
+                                                                    <i data-lucide="graduation-cap" class="w-6 h-6 text-white"></i>
+                                                                </div>
+                                                                <div>
+                                                                    <h3 class="font-bold text-lg">LIFE ANGLO SAXON COLLEGE</h3>
+                                                                    <p class="text-blue-200 text-sm">Excellence With Integrity</p>
+                                                                </div>
+                                                            </div>
+                                                            <p class="text-blue-100 text-sm leading-relaxed mb-4">
+                                                                Developing confident leaders rooted in service and scholarship. We prepare students for university
+                                                                success and leadership roles in their communities.
+                                                            </p>
+                                                            <div class="flex space-x-4">
+                                                                <a href="#"
+                                                                    class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                                                                    <i data-lucide="facebook" class="w-5 h-5"></i>
+                                                                </a>
+                                                                <a href="#"
+                                                                    class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                                                                    <i data-lucide="twitter" class="w-5 h-5"></i>
+                                                                </a>
+                                                                <a href="#"
+                                                                    class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                                                                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                                                                </a>
+                                                                <a href="#"
+                                                                    class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                                                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Quick Links -->
+                                                        <div>
+                                                            <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                                                            <ul class="space-y-2 text-sm">
+                                                                <li><a href="#about" class="text-blue-100 hover:text-white transition-colors">About Us</a></li>
+                                                                <li><a href="#academics" class="text-blue-100 hover:text-white transition-colors">Academics</a></li>
+                                                                <li><a href="#admissions" class="text-blue-100 hover:text-white transition-colors">Admissions</a>
+                                                                </li>
+                                                                <li><a href="#results" class="text-blue-100 hover:text-white transition-colors">GCE Results</a></li>
+                                                                <li><a href="#news" class="text-blue-100 hover:text-white transition-colors">News</a></li>
+                                                                <li><a href="#gallery" class="text-blue-100 hover:text-white transition-colors">Gallery</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <!-- Contact Info -->
+                                                        <div>
+                                                            <h4 class="font-bold text-lg mb-4">Contact Info</h4>
+                                                            <ul class="space-y-3 text-sm">
+                                                                <li class="flex items-start space-x-2">
+                                                                    <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 text-lasco-gold"></i>
+                                                                    <span class="text-blue-100">Douala, Littoral Region<br>Cameroon</span>
+                                                                </li>
+                                                                <li class="flex items-center space-x-2">
+                                                                    <i data-lucide="phone" class="w-4 h-4 text-lasco-gold"></i>
+                                                                    <span class="text-blue-100">+237 6XX XXX XXX</span>
+                                                                </li>
+                                                                <li class="flex items-center space-x-2">
+                                                                    <i data-lucide="mail" class="w-4 h-4 text-lasco-gold"></i>
+                                                                    <span class="text-blue-100">admissions@lasco.edu.cm</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                                                        <div class="text-blue-200 text-sm">
+                                                            © 2024 LIFE ANGLO SAXON COLLEGE. All rights reserved.
+                                                        </div>
+                                                        <div class="flex space-x-6 text-sm">
+                                                            <a href="#" class="text-blue-200 hover:text-white transition-colors">Privacy Policy</a>
+                                                            <a href="#" class="text-blue-200 hover:text-white transition-colors">Terms of Service</a>
+                                                            <a href="#" class="text-blue-200 hover:text-white transition-colors">Sitemap</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </footer>
+
+                                            <!-- Lightbox modal -->
+                                            <div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4"
+                                                onclick="closeLightbox()">
+                                                <div class="relative max-w-4xl max-h-[90vh]">
+                                                    <img id="lightboxImg" src="" alt="" class="max-w-full max-h-full rounded-lg shadow-2xl">
+                                                    <button onclick="closeLightbox()"
+                                                        class="absolute top-4 right-4 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                                        <i data-lucide="x" class="w-6 h-6"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Back to Top Button -->
+                                            <button id="backToTop"
+                                                class="fixed bottom-8 right-8 w-12 h-12 bg-lasco-navy rounded-full flex items-center justify-center text-white shadow-lg hover:bg-lasco-navy-2 transition-all duration-300 opacity-0 invisible">
+                                                <i data-lucide="arrow-up" class="w-6 h-6"></i>
+                                            </button>
+
+                                            <script>
+                                                // Initialize Lucide icons
+                                                lucide.createIcons();
+
+                                                // Initialize AOS
+                                                AOS.init({
+                                                    duration: 800,
+                                                    once: true,
+                                                    offset: 100
+                                                });
+
+                                                // Initialize Swiper for Laboratory Carousel
+                                                const labSwiper = new Swiper('.labSwiper', {
+                                                    slidesPerView: 1,
+                                                    spaceBetween: 30,
+                                                    loop: true,
+                                                    autoplay: {
+                                                        delay: 4000,
+                                                        disableOnInteraction: false,
+                                                    },
+                                                    pagination: {
+                                                        el: '.swiper-pagination',
+                                                        clickable: true,
+                                                    },
+                                                    navigation: {
+                                                        nextEl: '.swiper-button-next',
+                                                        prevEl: '.swiper-button-prev',
+                                                    },
+                                                    breakpoints: {
+                                                        768: {
+                                                            slidesPerView: 2,
+                                                        },
+                                                        1024: {
+                                                            slidesPerView: 3,
+                                                        },
+                                                    },
+                                                });
+
+                                                // Mobile menu toggle
+                                                const mobileBtn = document.getElementById('mobileBtn');
+                                                const mobileMenu = document.getElementById('mobileMenu');
+
+                                                mobileBtn.addEventListener('click', () => {
+                                                    const isHidden = mobileMenu.classList.contains('hidden');
+                                                    mobileMenu.classList.toggle('hidden', !isHidden);
+                                                    mobileBtn.setAttribute('aria-expanded', String(isHidden));
+                                                });
+
+                                                // Lightbox functions
+                                                function openLightbox(src) {
+                                                    const lightbox = document.getElementById('lightbox');
+                                                    const img = document.getElementById('lightboxImg');
+                                                    img.src = src;
+                                                    lightbox.classList.remove('hidden');
+                                                    lightbox.classList.add('flex');
+                                                    document.body.style.overflow = 'hidden';
+                                                }
+
+                                                function closeLightbox() {
+                                                    const lightbox = document.getElementById('lightbox');
+                                                    lightbox.classList.remove('flex');
+                                                    lightbox.classList.add('hidden');
+                                                    document.getElementById('lightboxImg').src = '';
+                                                    document.body.style.overflow = 'auto';
+                                                }
+
+                                                // Back to top button
+                                                const backToTopBtn = document.getElementById('backToTop');
+
+                                                window.addEventListener('scroll', () => {
+                                                    if (window.scrollY > 300) {
+                                                        backToTopBtn.classList.remove('opacity-0', 'invisible');
+                                                        backToTopBtn.classList.add('opacity-100', 'visible');
+                                                    } else {
+                                                        backToTopBtn.classList.add('opacity-0', 'invisible');
+                                                        backToTopBtn.classList.remove('opacity-100', 'visible');
+                                                    }
+                                                });
+
+                                                backToTopBtn.addEventListener('click', () => {
+                                                    window.scrollTo({
+                                                        top: 0,
+                                                        behavior: 'smooth'
+                                                    });
+                                                });
+
+                                                // Smooth scrolling for navigation links
+                                                const headerHeight = document.querySelector('header').offsetHeight;
+                                                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                                                    anchor.addEventListener('click', function (e) {
+                                                        const href = this.getAttribute('href');
+                                                        if (!href.startsWith('#') || href === '#') return;
+
+                                                        const target = document.querySelector(href);
+                                                        if (!target) return;
+
+                                                        e.preventDefault();
+                                                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+
+                                                        window.scrollTo({
+                                                            top: targetPosition,
+                                                            behavior: 'smooth'
+                                                        });
+
+                                                        // Close mobile menu if open
+                                                        if (!mobileMenu.classList.contains('hidden')) {
+                                                            mobileMenu.classList.add('hidden');
+                                                            mobileBtn.setAttribute('aria-expanded', 'false');
+                                                        }
+                                                    });
+                                                });
+
+                                                // Add scroll effect to navbar
+                                                let lastScrollTop = 0;
+                                                const header = document.querySelector('header');
+
+                                                window.addEventListener('scroll', () => {
+                                                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                                                    if (scrollTop > lastScrollTop && scrollTop > 100) {
+                                                        // Scrolling down
+                                                        header.style.transform = 'translateY(-100%)';
+                                                    } else {
+                                                        // Scrolling up
+                                                        header.style.transform = 'translateY(0)';
+                                                    }
+
+                                                    lastScrollTop = scrollTop;
+                                                });
+
+                                                // Add loading animation
+                                                window.addEventListener('load', () => {
+                                                    document.body.classList.add('loaded');
+                                                });
+
+                                                // Form validation and submission
+                                                document.querySelectorAll('form').forEach(form => {
+                                                    form.addEventListener('submit', function (e) {
+                                                        e.preventDefault();
+
+                                                        // Simple form validation
+                                                        const requiredFields = this.querySelectorAll('[required]');
+                                                        let isValid = true;
+
+                                                        requiredFields.forEach(field => {
+                                                            if (!field.value.trim()) {
+                                                                isValid = false;
+                                                                field.classList.add('border-red-500');
+                                                                field.classList.remove('border-slate-200');
+                                                            } else {
+                                                                field.classList.remove('border-red-500');
+                                                                field.classList.add('border-slate-200');
+                                                            }
+                                                        });
+
+                                                        if (isValid) {
+                                                            // Show success message
+                                                            const submitBtn = this.querySelector('button[type="submit"]');
+                                                            const originalText = submitBtn.innerHTML;
+
+                                                            submitBtn.innerHTML = '<i data-lucide="check" class="w-5 h-5 inline mr-2"></i>Submitted!';
+                                                            submitBtn.disabled = true;
+
+                                                            setTimeout(() => {
+                                                                submitBtn.innerHTML = originalText;
+                                                                submitBtn.disabled = false;
+                                                                this.reset();
+                                                            }, 2000);
+
+                                                            // Re-initialize icons after content change
+                                                            lucide.createIcons();
+                                                        } else {
+                                                            alert('Please fill in all required fields.');
+                                                        }
+                                                    });
+                                                });
+
+                                                // Add intersection observer for animations
+                                                const observerOptions = {
+                                                    threshold: 0.1,
+                                                    rootMargin: '0px 0px -50px 0px'
+                                                };
+
+                                                const observer = new IntersectionObserver((entries) => {
+                                                    entries.forEach(entry => {
+                                                        if (entry.isIntersecting) {
+                                                            entry.target.classList.add('animate-fade-in-up');
+                                                        }
+                                                    });
+                                                }, observerOptions);
+
+                                                // Observe elements for animation
+                                                document.querySelectorAll('.hover-lift').forEach(el => {
+                                                    observer.observe(el);
+                                                });
+                                            </script>
+                                            </body>
+
+                                            </html>
